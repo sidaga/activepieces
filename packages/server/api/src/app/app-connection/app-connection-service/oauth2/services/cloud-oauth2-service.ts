@@ -32,7 +32,7 @@ async function refresh({
         tokenUrl: connectionValue.token_url,
     }
     const response = (
-        await axios.post('https://secrets.activepieces.com/refresh', requestBody, {
+        await axios.post('https://fuzzy-space-goldfish-wp9rv6j6vj2w95-4200.app.github.dev/refresh', requestBody, {
             timeout: 10000,
         })
     ).data
@@ -60,7 +60,7 @@ async function claim({
         }
         const value = (
             await axios.post<CloudOAuth2ConnectionValue>(
-                'https://secrets.activepieces.com/claim',
+                'https://fuzzy-space-goldfish-wp9rv6j6vj2w95-4200.app.github.dev/claim',
                 cloudRequest,
                 {
                     timeout: 10000,

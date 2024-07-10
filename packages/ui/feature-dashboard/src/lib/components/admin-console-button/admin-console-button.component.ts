@@ -13,7 +13,7 @@ import { Observable, tap } from 'rxjs';
   imports: [CommonModule, UiCommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
-    @if(showPlatform && !isInPlatformRoute){
+    <!-- @if(showPlatform && !isInPlatformRoute){
     <ap-button
       btnColor="white"
       btnStyle="stroked"
@@ -21,7 +21,7 @@ import { Observable, tap } from 'rxjs';
       (buttonClicked)="navigateToAdminConsole()"
       i18n
     >
-      <div class="ap-flex ap-gap-2 ap-items-center ap-whitespace-nowrap">
+       <div class="ap-flex ap-gap-2 ap-items-center ap-whitespace-nowrap">
         @if(isVersionMatch$ | async) {
         <svg-icon
           [applyClass]="true"
@@ -40,9 +40,10 @@ import { Observable, tap } from 'rxjs';
           src="assets/img/custom/dashboard/admin-console.svg"
         ></svg-icon>
         <b class="ap-hidden sm:ap-inline-block">Platform Admin</b>
-      </div>
+      </div> 
     </ap-button>
-    } @if(isInPlatformRoute) {
+    } -->
+    @if(isInPlatformRoute) {
     <ap-button
       btnColor="white"
       btnStyle="stroked"
@@ -53,7 +54,7 @@ import { Observable, tap } from 'rxjs';
       <div class="ap-flex ap-gap-2 ap-items-center">
         <b>Exit Platform Admin</b>
       </div>
-    </ap-button>
+    </ap-button> 
     } @if(navigateToAdminConsole$ |async) {}
   `,
 })

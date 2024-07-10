@@ -12,7 +12,7 @@
                 }
                 @if((isInPlatformRoute$ | async) === true) {
                     <div class="ap-typography-headline-5 !ap-font-semibold" 
-                    i18n>Platform Admin</div>
+                    i18n>Platform Admin</div> 
                 }
                 <div class="ap-flex-grow"></div>  
                 <div class="ap-flex ap-gap-2">
@@ -25,8 +25,8 @@
                 </div>
                 <ap-user-avatar class="ap-ml-[20px]"></ap-user-avatar>
             </div>
-
-        </div>
+            
+        </div>  
         <div class="ap-h-full"
             [class.ap-pt-7.5]="((isEmbedded$ | async) === undefined || (isEmbedded$ | async) === false)">
 

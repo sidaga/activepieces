@@ -34,17 +34,7 @@ import { FlowRunStatus } from '@activepieces/shared';
   template: `
     <div class=" ap-px-[30px] ap-pt-[50px]">
       <ap-page-title title="Runs" i18n-title>
-        @if((isInEmbedding$ | async) === false) {
-        <ap-button
-          actionButton
-          i18n-tooltipText
-          (buttonClicked)="goToAlerts()"
-          btnSize="medium"
-          btnColor="primary"
-          i18n
-          >Set Alerts</ap-button
-        >
-        }
+        @if((isInEmbedding$ | async) === false) { }
       </ap-page-title>
       @if(isInEmbedding$ | async) {
       <app-runs-table #runsTable></app-runs-table>
@@ -62,32 +52,6 @@ import { FlowRunStatus } from '@activepieces/shared';
         <mat-tab i18n-label label="All Runs">
           <div class="ap-mt-1">
             <app-runs-table #runsTable></app-runs-table>
-          </div>
-        </mat-tab>
-
-        <mat-tab i18n-label label="Issues">
-          <ng-template matTabLabel class="ap-flex ap-items-center">
-            <div class="ap-flex ap-gap-1 ap-items-center">
-              <div class="category-label" i18n>Issues</div>
-              @if((isIssuesDisabled$ | async) ===false) { @if(isThereAnIssue$ |
-              async){
-              <svg-icon
-                [applyClass]="true"
-                class="ap-fill-danger ap-top-[6px] ap-right-[-6px] ap-absolute"
-                [svgStyle]="{ width: '8px', height: '8px' }"
-                src="assets/img/custom/notification_important.svg"
-              >
-              </svg-icon>
-              } }
-            </div>
-          </ng-template>
-
-          <div class="ap-mt-1">
-            <app-issues-table
-              (issueClicked)="issueClicked($event.issue)"
-              [isFeatureDisabled]="isIssuesDisabled$ | async | defaultFalse"
-              #IssuesTable
-            ></app-issues-table>
           </div>
         </mat-tab>
       </mat-tab-group>

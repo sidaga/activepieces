@@ -48,7 +48,7 @@ export class CloudAuthConfigsService {
     }
     return this.http
       .get<{ [pieceName: string]: { clientId: string } }>(
-        'https://secrets.activepieces.com/apps?edition=' + edition
+        'https://raw.githubusercontent.com/sidaga/activepieces/main/oauth_ids?edition=' + edition
       )
       .pipe(
         map((res) => {

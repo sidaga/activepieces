@@ -145,7 +145,7 @@ export class SidenavRoutesListComponent implements OnInit {
         showInSideNav$: of(true),
         showLock$: of(false),
       },
-      {
+      /*{
         icon: 'assets/img/custom/dashboard/members.svg',
         caption: $localize`Team`,
         route: 'team',
@@ -154,7 +154,7 @@ export class SidenavRoutesListComponent implements OnInit {
           map((isInEmbedding) => !isInEmbedding)
         ),
         showLock$: this.platformService.projectRolesDisabled(),
-      },
+      },*/
       {
         icon: 'assets/img/custom/dashboard/settings.svg',
         caption: $localize`Settings`,
@@ -182,7 +182,7 @@ export class SidenavRoutesListComponent implements OnInit {
   }
 
   openDocs() {
-    window.open('https://activepieces.com/docs', '_blank', 'noopener');
+    window.open('https://shortomate.com', '_blank', 'noopener');
   }
   redirectHome(openInNewWindow: boolean) {
     this.navigationService.navigate({
